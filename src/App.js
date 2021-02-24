@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import React, {useState,useEffect} from 'react'
 import './App.css';
+import TableFun from './components/TableFun'
+
 
 function App() {
+
+  
+  const [data , setData ] = useState([])
+
+ useEffect(() => {
+   fetch("https://restcountries.eu/rest/v2/").then(res => res.json() )
+   .then((res) =>{
+    const sliceData = res.filter((val) => val.area%147 ==0)
+
+        setData(sliceData)
+   
+   }).catch(err => console.log(err))
+ 
+ },[]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   
+  <TableFun data={data}></TableFun>
+   
+   </>
   );
 }
 
