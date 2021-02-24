@@ -7,8 +7,8 @@
 
 # About 
 
-Created a table  from fetched data from https://restcountries.eu/
-The data returned is Large so it is sliced using Js function.
-Each column can be sorted in both ascending and descending order by just clicking on the respective column name.
-Each row can be searched by just typing the name of country in Seach Box.
+- Created a table  from fetched data from https://restcountries.eu/.
+- The data returned is Large so it is sliced using Js function.
+- Each column can be sorted in both ascending and descending order by just clicking on the respective column name.
+- Each row can be searched by just typing the name of country in Seach Box.
  
